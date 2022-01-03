@@ -1,8 +1,7 @@
 function fn
     set v $argv[1]
     git switch test$v
-    echo test$v
-    test$v >test$v.txt
+    echo test$v >test$v.txt
     git add --all
     git commit -m "commit $v"
     git pull --rebase origin main
