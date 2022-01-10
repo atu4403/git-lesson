@@ -1,0 +1,21 @@
+name: Check
+on:
+  push:
+jobs:
+  ci:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - macos-11.0
+          - macos-latest
+          - windows-latest
+          - ubuntu-20.04
+          - ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          echo "========="
+          echo $XDG_CONFIG_HOME
+          echo $HOME
+        shell: bash
